@@ -1,0 +1,194 @@
+.apply {
+    width: 90%;
+    margin: 20px auto;
+}
+
+div.items>div.applyButtonLittle {
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.waitting {
+    background-color: #33A6B8;
+}
+
+.refuse {
+    background-color: #E83015;
+}
+
+div.items>div.apply-allown:hover {
+    background-color: #0089A7;
+    cursor: pointer;
+}
+
+div.items>div.apply-allown {
+    background-color: #33A6B8;
+}
+
+.apply-refuse:hover {
+    background-color: #AB3B3A;
+}
+
+.apply-refuse {
+    background-color: #E83015;
+    cursor: pointer;
+}
+
+.size-fa {
+    padding: 3px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.size-fa:hover {
+    color: red;
+}
+
+div.items {
+    max-height: 50px;
+}
+
+div.items-remove {
+    transition-property: opacity, padding, margin, max-height;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+    opacity: 0;
+    padding: 0px;
+    margin: 0px 80vw 0px -80vw;
+    max-height: 0px;
+}
+
+body {
+    overflow: hidden;
+}
+
+.head-flag {
+    /* float: left; */
+    transition-property: padding, max-height, opacity;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+    width: 100vw;
+    height: 2em;
+    background-color: rgb(255, 196, 0);
+    display: none;
+    max-height: 0px;
+    opacity: 0;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.head-flag-show {
+    transition-property: padding, max-height, opacity;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+    padding: 10px;
+    max-height: 2em;
+    opacity: 1;
+}
+
+.head-flag>div {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-align: center
+}
+
+.head-flag>.head-flag-btn {
+    float: right;
+    height: calc(2em - 14px);
+    border-radius: 5px;
+    width: 10%;
+    margin-right: 5%;
+    border-radius: 4px;
+}
+
+.head-flag>.head-flag-text {
+    float: left;
+    color: #333;
+}
+
+.head-flag>.cancel {
+    background-color: #E83015
+}
+
+.head-flag>.cancel:hover {
+    background-color: #AB3B3A;
+    cursor: pointer;
+}
+
+.head-flag>.allown {
+    background-color: #33A6B8;
+}
+
+.head-flag>.allown:hover {
+    background-color: #0089A7;
+    cursor: pointer;
+}
+
+.content-box {
+    z-index: 9999999;
+    margin-bottom: 3px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    border: solid 1px rgba(255, 255, 255, 0.95);
+    width: 50%;
+    overflow: hidden;
+    padding: 20px;
+    height: 34vw;
+}
+
+div.content-text {
+    margin-left: 30%;
+}
+
+div.content-text>p {
+    color: black;
+}
+
+.closeButton-common {
+    display: inline-block;
+    border-radius: 5px;
+    color: white;
+    padding: 0.2em;
+}
+
+div.closeButton-common>p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    width: 2em;
+    height: 1.5em;
+    margin: 0;
+}
+
+.closeButton-close {
+    background-color: #58B2DC;
+}
+
+.closeButton-close:hover {
+    cursor: pointer;
+    background-color: #1E88A8;
+}
+
+.closeButton-apply {
+    background-color: #E83015;
+}
+
+.closeButton-apply:hover {
+    cursor: pointer;
+    background-color: #AB3B3A;
+}
+
+#popTitle {
+    font-size: 1.5em;
+    color: black;
+    margin: 40px auto 40px auto;
+}
+
+textarea.input {
+    resize: none;
+    width: calc(100% - 20px);
+    height: calc(34vw - 1.5em - 80px - 10% - 50px - 20px);
+    max-width: calc(100% - 20px);
+}

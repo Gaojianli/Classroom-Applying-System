@@ -1,0 +1,80 @@
+
+.classroom-time-check-head {
+	margin: 2% 0% 0% 5%;
+	padding: 0px;
+	height: 20px;
+    list-style: none;
+}
+div.classroom-time-check-head>div.check-li {
+	width: 20%;
+	padding-top: 2px;
+	display: block;
+	padding-bottom: 2px;
+	position: absolute;
+	border-radius: 5px;
+	border:none;
+	background-color: rgba(255,255,255,0.8);
+	color: white;
+}
+div.classroom-time-check-head>div.check-li:hover,
+div.classroom-time-check-head>div.check-li:hover{
+	cursor: pointer;
+}
+div.classroom-time-check-head>div.li-1{
+	height: 1.8em;
+	margin-left: 4%;
+}
+div.classroom-time-check-head>div.li-2 {
+	margin-left: 25.6%;
+	height: 1.8em;
+}
+div.classroom-time-check-head>div.li-3 {
+	margin-left: 47%;
+	background-color: rgba(0, 0, 0, 0);
+	padding: 0px;
+	height: 1.8em;
+}
+div.classroom-time-check-head>div.check-li>div.btn {
+	margin-right: 20%;
+	/* margin-top: -1.2em; */
+	width: 40%;
+	background-color: #33A6B8;
+	border-radius: 5px;
+	height: 2em;
+}
+div.classroom-time-check-head>div.check-li>div.btn:hover{
+	cursor: pointer;
+	background-color:#0089A7;
+}
+div.classroom-time-check-head>div.check-li>.check {
+	color: black;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+div.classroom-time-check-head>div.check-li>.check-list {
+	height: 0px;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, .9);
+	transition: height .5s ease-in-out;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	max-height: 180px;
+}
+div.classroom-time-check-head>div.check-li>div.check-list>.check-lo {
+	color: black;
+	font-size: 16px;
+}
+div.classroom-time-check-head>div.check-li>div.check-list>.check-lo:hover {
+	background-color: rgba(0, 0, 0, 0.623);
+	color: white;
+}
+div.classroom-time-check-head>div.check-li>.checkbox {
+	display: none;
+}
+/* #weekday-check:checked~.week {
+	height: calc(20px*7);
+}
+#time-check:checked~.time {
+	height: calc(20px*4);
+} */
+/* 改为动态生成 */

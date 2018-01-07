@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/modal.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+	<script src="https://cdn.bootcss.com/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+	<script src="js/modal.js"></script>
+	<script src="js/query.js"></script>
+	<title>欢迎你，</title>
+</head>
+<body>
+	<div id='pop-div'  class="pop-box" align="center">
+		<div align="center">
+			<h1 class="modal_inner error"><i class="fa fa-close modal_inner"></i></h1>	
+		</div>
+		<p id="errorReason" align="center">您尚未登录！</p>
+ 		<a href="./" style="text-decoration: none;">
+ 			<div class="closeButton" id="closeButton">
+  				<p align="center">确定</p>
+ 			</div>
+ 		</a>
+	</div>
+	<div id='pop-succeed'  class="pop-box" align="center">
+		<div align="center">
+			<h1 class="modal_inner error"><i class="fa fa-check modal_inner"  style="color: LimeGreen;"></i></h1>	
+		</div>
+		<p id="succeed-info" align="center">操作成功</p>
+ 			<div class="closeButton" id="closeButton">
+  				<p align="center" onclick="hideDiv('pop-succeed')">确定</p>
+ 			</div>
+	</div>		
+	<div id='loading-div'  class="pop-box" align="center">
+		<div align="center">
+			<h1 class="modal_inner error" style="font-size: 3em;"><i class="fa fa-hourglass-2 modal_inner" style="color: #00896C;"></i></h1>	
+		</div>
+		<p id="errorReason" align="center">加载中，请稍后</p>
+	</div>
+	<div class="main">
+		<div style="margin: 0 auto;display: block;overflow: auto;">
+			<div class="blocks blocks-ori" style="background-color: rgb(41,171,226);border-color:rgb(41,171,226);" id="blocks1">
+				<i class="fa fa-bell"></i>
+				<h1 id="notice">通知</h1>
+				<p id="notice">有条 未读通知</p>
+			</div>
+			<div class="blocks blocks-ori" style="background-color: rgb(241,90,36);border-color:rgb(241,90,36);" id="blocks2">
+				<i class="fa fa-university"></i>
+				<h1>教室</h1>
+				<p>目前剩余 间教室/活动室可申请</p>
+			</div>
+		</div>
+		<div style="margin: 0 auto;display: block;overflow: auto;">
+			<div class="blocks blocks-ori" style="background-color: rgb(147,39,143);border-color:rgb(147,39,143);" id="blocks3">
+				<i class="fa fa-check"></i>
+				<h1 id="notice">申请</h1>
+				<p id="notice">您有 个申请待通过</p>
+			</div>
+			<div class="blocks blocks-ori" style="background-color: #00896C;border-color:#00896C;" id="blocks4">
+				<i class="fa fa-cog fa-spin"></i>
+				<h1>设置</h1>
+				<p>账户设置</p>
+				<p>退出登陆</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p class="footer">Copyright © Dokidoki Website Club. All rights reserved.</p>
+	</footer>
+	<script src="js/main.js"></script>
+</body>
+</html>

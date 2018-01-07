@@ -1,0 +1,60 @@
+@charset "utf-8";
+.pop-box {
+	z-index: 9999999;
+	margin-bottom: 3px;
+	display: none;
+	position: absolute;
+	background: rgba(255, 255, 255, 0.95);
+	border-radius: 10px;
+	border: solid 1px rgba(255, 255, 255, 0.95);
+	width: 50%;
+	height: 50%;
+	overflow:hidden;
+	padding: 20px;
+}
+
+#bg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1001;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.modal_inner {
+	display: block!important;
+}
+
+h1.error>i {
+	color: #D05A6E;
+	font-size: 144px;
+}
+
+h1.error {
+	margin-top: 8%;
+}
+
+.closeButton{
+	margin: 10% auto;
+	background: #58B2DC;
+	width: 100px;
+	height: 50px;
+	border-radius: 5px;
+}
+.closeButton:hover{
+	cursor: pointer;
+	background-color: #1E88A8;
+}
+.closeButton>p{
+	font-size: 1.5em;
+	line-height: 50px;
+	color: white;
+}
+#errorReason,
+#succeed-info{
+	font-size: 1.5em;
+	color: black;
+	margin: 40px auto 40px auto;
+}

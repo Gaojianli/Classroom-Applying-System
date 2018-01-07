@@ -1,0 +1,223 @@
+@charset "utf-8";
+body {
+    background-color: #534741;
+}
+
+h1,
+p,
+div,
+i,
+td,
+th {
+    color: white;
+    font-family: "幼圆";
+}
+
+i {
+    font-size: 2em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: lighter;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+div.main {
+    margin: 10% auto auto auto;
+    overflow: auto;
+}
+
+.blocks {
+    float: left;
+    padding: 20px;
+    z-index: 200;
+    text-align: center;
+    border: 1px solid;
+    margin-left: 0px;
+    margin-right: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.blocks-ori:hover {
+    border-color: white;
+    cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    bottom: 5px;
+    text-align: center;
+}
+
+p.footer {
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.disabled {
+    height: 170px;
+    float: left;
+    padding: 20px;
+    z-index: 200;
+    text-align: center;
+    border: 1px solid;
+    margin-left: 0px;
+    margin-right: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.arrow {
+    float: left;
+    font-size: 3em;
+    margin: 4px;
+    z-index: 500;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+div.list {
+    width: 90%;
+    margin: 20px auto;
+}
+
+div.items {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 10px;
+    overflow: auto;
+    margin-top: 4px;
+    z-index: 501;
+}
+
+div.list-header {
+    padding: 10px;
+    overflow: auto;
+}
+
+div.list-body {
+    max-height: 300px;
+}
+
+div.list-header>div,
+div.items>div {
+    float: left;
+    width: 13%;
+    height: 22px;
+    font-size: 20px;
+}
+
+div.list-header>div[id$="number-header"] {
+    margin-left: 5px;
+    margin-right: 3%;
+}
+
+div.list-header>div {
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+div.items>div {
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+div.items>div.classRoomStatus,
+div.items>div.applyButton {
+    margin-left: 20px;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+div.items>div.classRoomStatus>p,
+div.items>div.applyButton>p {
+    margin: 0 auto;
+    line-height: 20px;
+}
+
+div.items>div.free {
+    background-color: LimeGreen;
+}
+
+div.items>div.applyButton {
+    float: right;
+    margin-right: 20px;
+}
+
+div.items>div.apply-enabled {
+    background-color: #33A6B8;
+}
+
+div.items>div.apply-disabled {
+    background-color: grey;
+}
+
+div.items>div.apply-enabled:hover {
+    cursor: pointer;
+    background-color: #0089A7;
+}
+
+div.items>div.occupied {
+    background-color: #E83015;
+}
+
+#header-occupied {
+    width: 4em;
+}
+
+div.sets {
+    display: block;
+    text-align: left;
+    margin-top: 30px;
+}
+
+div.sets>div {
+    display: inline;
+}
+
+div.settings {
+    text-align: center;
+    font-size: 1.3em;
+    height: 90%;
+}
+
+div.settings>div.hidden {
+    height: 90%;
+    position: relative;
+}
+
+div.settings>div>div[id$="user-info"] {
+    display: block;
+    padding-left: 30%;
+}
+
+div[id$="otherButtons"] {
+    position: absolute;
+    bottom: 0px;
+    left: 28%;
+    margin: 0 auto;
+}
+
+div[id$="otherButtons"]>div,
+div[id$="otherButtons"]>div>div {
+    display: inline;
+    width: 100%;
+    overflow: auto;
+}
+
+div.changable:hover {
+    color: #F9BF45;
+    cursor: pointer;
+}

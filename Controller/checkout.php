@@ -1,0 +1,72 @@
+<?php
+define("HOST", "localhost");
+define("USER", "");
+define("PASS", "");
+define("DBNAME", "class_applying_sys");
+$dbc = mysqli_connect(HOST, USER, PASS, DBNAME);
+mysqli_set_charset($dbc, 'utf8');
+$the_posted_status=$_POST["status"];
+$apply_date_id=$_POST["id"];
+$user_id=$_COOKIE["uid"];
+$get_execute_man_name="SELECT * FROM class_applying_sys.user_information WHERE user_id=$user_id";
+$get_execute_man_name_result=mysqli_query($dbc,$get_execute_man_name);
+$get_execute_man_name_row=mysqli_fetch_array($get_execute_man_name_result,MYSQLI_ASSOC);
+$execute_man_name=$get_execute_man_name_row["name"];
+$get_apply_time="SELECT * FROM class_applying_sys.applicant WHERE apply_id=$apply_date_id";
+$get_apply_time_result=mysqli_query($dbc,$get_apply_time);
+$get_apply_time_row=mysqli_fetch_array($get_apply_time_result,MYSQLI_ASSOC);
+$apply_time=$get_apply_time_row["apply_time"];
+$apply_classroom_id=$get_apply_time_row["classroom_id"];
+$apply_user_id=$get_apply_time_row["user_id"];
+$query_applicant_tel="SELECT * FROM class_applying_sys.user_information WHERE user_id=$apply_user_id";
+$query_applicant_tel_result=mysqli_query($dbc,$query_applicant_tel);
+$query_applicant_tel_row=mysqli_fetch_array($query_applicant_tel_result,MYSQLI_ASSOC);
+$applicant_tel=$query_applicant_tel_row["tel"];
+$get_classroom_information="SELECT * FROM class_applying_sys.classroom_information WHERE classroom_id=$apply_classroom_id";
+$get_classroom_information_result=mysqli_query($dbc,$get_classroom_information);
+$get_classroom_information_row=mysqli_fetch_array($get_classroom_information_result,MYSQLI_ASSOC);
+$classroom_identifier=$get_classroom_information_row["class_identifier"];
+$classroom_location=$get_classroom_information_row["location"];
+$classroom_manager_id=$get_classroom_information_row["manager_id"];
+$query_manager_tel="SELECT * FROM class_applying_sys.user_information WHERE user_id=$classroom_manager_id";
+$query_manager_tel_result=mysqli_query($dbc,$query_manager_tel);
+$query_manager_tel_row=mysqli_fetch_array($query_manager_tel_result,MYSQLI_ASSOC);
+$manager_tel=$query_manager_tel_row["tel"];
+$time_stamp=time();
+if ($the_posted_status[0]=="0"){
+    $time_time=date("Y/m/d—G：i",time());
+    $apply_time=date("Y/m/d—G：i",$apply_time);
+    $content=htmlentities("<p>主题：你的申请被通过</p><p>时间：$time_time</p><p>教室：$classroom_identifier</p><p>地点：$classroom_location</p><p>申请时间：$apply_time</p><p>状态：<span style=\'color: LimeGreen\'>通过</span></p><p>操作人：$execute_man_name</p>",ENT_QUOTES,"UTF-8");
+    $create_new_message="INSERT INTO class_applying_sys.message_list(user_id,title,content,message_time,isRead) VALUES ($apply_user_id,'您的申请通过了','$content','$time_time',0)";
+    mysqli_query($dbc,$create_new_message);
+    $update_applicant="UPDATE class_applying_sys.applicant SET apply_status=0 WHERE apply_id=$apply_date_id";
+    mysqli_query($dbc,$update_applicant);
+    $sign=md5("50006193a616dec02d3134db88dbdef2a73b75c".$time_stamp);
+    $ch = curl_init();
+    $timeout = 5;
+    curl_setopt($ch, CURLOPT_URL, "http://api.vlink.cn/interface/open/v1/webcall?tel=$applicant_tel&appId=5000619&sign=$sign&timestamp=$time_stamp&text=你的申请被通过了呢");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+    $file_contents = curl_exec($ch);
+    curl_close($ch);
+    echo $file_contents;
+    $ch = curl_init();
+    $timeout = 5;
+    curl_setopt($ch, CURLOPT_URL, "http://api.vlink.cn/interface/open/v1/webcall?tel=$manager_tel&appId=5000619&sign=$sign&timestamp=$time_stamp&text=你负责的教室了呢");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+    $file_contents = curl_exec($ch);
+    curl_close($ch);
+    echo $file_contents;
+}
+else{
+    $reason=substr($the_posted_status,1);
+    $time_now=date("Y/m/d—G：i",time());
+    $apply_time=date("Y/m/d—G：i",$apply_time);
+    $content=htmlentities("<p>主题：你的申请被拒绝</p><p>时间：$time_now</p><p>教室：$classroom_identifier</p><p>地点：$classroom_location</p><p>申请时间：$apply_time</p><p>状态：<span style=\'color: #E83015\'>拒绝</span></p><p>操作人：$execute_man_name</p><P>理由：$reason</P>",ENT_QUOTES,"UTF-8");
+    $create_new_message="INSERT INTO class_applying_sys.message_list(user_id,title,content,message_time,isRead) VALUES ($apply_user_id,
+'您的申请被拒绝了','$content','$time_now',0)";
+    mysqli_query($dbc,$create_new_message);
+    $update_applicant="UPDATE class_applying_sys.applicant SET apply_status=1 WHERE apply_id=$apply_date_id";
+    mysqli_query($dbc,$update_applicant);
+}

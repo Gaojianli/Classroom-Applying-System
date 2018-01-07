@@ -1,0 +1,85 @@
+@charset "utf-8";
+body {
+	background-color: #534741;
+}
+p,input{
+	font-family: "幼圆";
+}
+.logo {
+	height: 180px;
+}
+.loginButton {
+	margin: 0 auto;
+	background: #39B54A;
+	width: 342px;
+	height: 46px;
+	border-radius: 5px;
+}
+div.loginButton:hover {
+	background-color: #1B813E;
+	cursor: pointer;
+}
+div.loginButton>p {
+	color: white;
+	font-size: 1.2em;
+	line-height: 46px;
+}
+div.inputBox{
+	height: 54px;
+	margin: 10px 5px 20px 5px;
+	text-align: center;
+}
+input.inputBox {
+	border: #000000;
+	border-style: solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	background-color: #FFFFFF;
+	min-width: 342px;
+	height: 50px;
+	font-size: 20px;
+	box-shadow: 3px 3px 2px #000000;
+	border-radius: 5px;
+}
+input.inputBox:focus{
+    border: 1px solid #3b99fc!important;
+    outline: 0;
+    box-shadow: 0px 0px 3px 2px #3b99fc!important;
+}
+input.inputBox,
+img.logo2{
+	float: left;
+}
+img.logo2{
+	width: 54px;
+	height: 54px;
+}
+.backgroundLogin {
+	background: #42210B;
+	margin: 50px auto;
+	width: 450px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	box-shadow: 5px 5px 2px #000000;
+}
+p.applying {
+	color: white;
+	text-align: center;
+	font-size: 2em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-family: "robot";
+}
+footer {
+	position: absolute;
+	bottom: 5px;
+	text-align: center;
+}
+p.footer {
+	color: white;
+	text-align: center;
+	margin: 0 auto;
+	font-family: "robot";
+}
